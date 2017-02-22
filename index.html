@@ -4,22 +4,49 @@
   <head>
     <title>CityDist | Find your distance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles/normalize.css">
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <script src="https://use.fontawesome.com/2692d542cb.js"></script>
   </head>
 
   <body>
 
+    <!-- ###### HEADER ###### -->
     <div class="container">
       <header class="main-header">
         <h1 class="page-title">CityDist</h1>
-        <p class="page-info">Find the distance between two cities</p>
         <div class="header-draw">
-
-
+          <div class="marker"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+          <div class="tracks"></div>
+          <div class="marker"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
         </div><!--/.header-draw-->
       </header>
 
-    </div>
+      <div class="earth-curve"></div>
+    </div><!--/.container-->
+      <!-- ###### FORM ###### -->
+      <section class="input-container">
+        <h2>Find your distances below</h2>
+        <form id="" class="cities-form">
+          <label class="hidden" for="input-1">First City</label>
+          <input id="input-1" class="input-one" type="text" placeholder="First City">
+          <span>To</span>
+          <label class="hidden" for="input-2">Second City</label>
+          <input id="input-2" class="input-two" type="text" placeholder="Second City">
+        </form>
+      </section>
+
+      <!-- ###### RESULTS ###### -->
+      <section class="results">
+        <h2>The distance between <span class="city-val-one"></span> and <span class="city-val-two"></span> is</h2>
+        <p><span class="miles-val"></span> Miles</p>
+        <p><span class="kilo-val"></span> Kilometers</p>
+        <p><span class="nm-val"></span> Nautical Miles</p>
+      </section>
+
+
+      <!-- POSSIBLY A GOOGLE MAP HERE -->
 
     <script src="scripts/scripts.js">
   </body>

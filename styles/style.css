@@ -1,0 +1,113 @@
+/****************
+    UNIVERSAL
+****************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/****************
+    GENERAL STYLES
+****************/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  color: white;
+  background-color: #009B72
+}
+
+header,
+section {
+  padding: 4rem;
+}
+
+header,
+.container {
+  background-color: #009DDC;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+span, p {
+  font-size: 2rem;
+}
+
+input[type="text"] {
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+
+/****************
+    REUSABLE
+****************/
+
+.hidden {
+  position: absolute;
+  top: -999999px;
+  left: -999999px;
+}
+
+
+
+/****************
+    HEADER
+****************/
+.header-draw {
+  position: relative;
+  top: 60px;
+}
+
+.marker,
+.tracks {
+  display: inline-block;
+}
+
+.marker {
+  font-size: 6rem;
+  position: relative
+  top: 300px;
+  z-index: 99;
+}
+
+.tracks {
+  width: 50%;
+  height: 100px;
+  border-top: 5px dashed white;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+
+
+.earth-curve {
+  background-color: #009B72;
+  height: 50px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+/****************
+    FORM
+****************/
+
+.input-container {
+  width: 100%;
+  background-color: #009B72;
+}
+
