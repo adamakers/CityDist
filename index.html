@@ -28,17 +28,30 @@
       <!-- ###### FORM ###### -->
       <section class="input-container">
         <h2>Find your distances below</h2>
-        <form id="" class="cities-form">
-          <label class="hidden" for="input-1">First City</label>
-          <input id="input-1" class="input-one" type="text" placeholder="First City">
-          <span>To</span>
-          <label class="hidden" for="input-2">Second City</label>
-          <input id="input-2" class="input-two" type="text" placeholder="Second City">
+        <form class="cities-form">
+          <div class="search-container search-one">
+            <label for="input-1">First City</label>
+            <input id="input-1" class="input-one" type="text" placeholder="First City">
+            <ul class="results-list results-one">
+              <li>City, State</li>
+              <li>City, State</li>
+              <li>City, State</li>
+              <li>City, State</li>
+            </ul>
+          </div>
+          <div class="search-container search-two invisible">
+            <label for="input-2">Second City</label>
+            <input id="input-2" class="input-two" type="text" placeholder="Second City">
+            <ul class="results-list results-two">
+              <li>City, State</li>
+            </ul>
+          </div>
         </form>
+        <button>Change Stuff here</button>
       </section>
 
       <!-- ###### RESULTS ###### -->
-      <section class="results">
+      <section class="results hidden">
         <h2>The distance between <span class="city-val-one"></span> and <span class="city-val-two"></span> is</h2>
         <p><span class="miles-val"></span> Miles</p>
         <p><span class="kilo-val"></span> Kilometers</p>

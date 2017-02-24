@@ -45,12 +45,37 @@ span, p {
   font-size: 2rem;
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  background-color: #fff;
+  color: #222;
+  border: 2px solid #f26430;
+  padding: 1rem 0;
+  margin-bottom: 5px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
 input[type="text"] {
   border: none;
   padding: 10px;
   border-radius: 3px;
   font-size: 1.6rem;
-  margin: 1rem;
+  margin: 1rem 0;
+}
+
+label {
+  position: absolute;
+  top: -999999px;
+  left: -999999px;
+}
+
+button {
+
 }
 
 
@@ -59,10 +84,9 @@ input[type="text"] {
 ****************/
 
 .hidden {
-  position: absolute;
-  top: -999999px;
-  left: -999999px;
+  display: none;
 }
+
 
 
 
@@ -109,5 +133,22 @@ input[type="text"] {
 .input-container {
   width: 100%;
   background-color: #009B72;
+  padding-top: 0;
+}
+
+.cities-form {
+  position: relative;
+}
+
+.search-container {
+  max-width: 450px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
 }
 
