@@ -28,14 +28,24 @@ function filterCityList(searchFor, cities) {
 }
 
 function displayCities() {
+  const val = this.value;
   const filteredList = filterCityList(this.value, cities);
-  const displayList = filteredList.map(function(item){
-    return `<li>${item.city}, ${item.state}</li>`;
-  });
+  const displayList = filteredList.map(item => {
+    const regex = new RegExp(this.value, 'gi');
+    const cityName = item.city.replace(regex, '<span>' + this.value + '</span>');
+    const stateName = item.state.replace(regex, `<span>${this.value}</span>`);
+    return `<li>${cityName}, ${stateName}</li>`;
+  }).join('');
+
+  if (this.value) {
+    resultsList.innerHTML = displayList;
+  } else {
+    resultsList.innerHTML = '';
+  }
+  
 }
 
 // EVENT LISTENERS
-
 formInpOne.addEventListener("input", displayCities);
 
 

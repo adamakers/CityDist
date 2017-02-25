@@ -49,6 +49,11 @@ ul {
   padding: 0;
 }
 
+li,
+li span {
+  font-size: 1.6rem;
+}
+
 li {
   list-style: none;
   background-color: #fff;
@@ -56,8 +61,14 @@ li {
   border: 2px solid #f26430;
   padding: 1rem 0;
   margin-bottom: 5px;
-  font-size: 1.6rem;
   cursor: pointer;
+}
+
+li span {
+  background-color: #f26430;
+  color: white;
+  border-radius: 2px;
+  padding: 2px;
 }
 
 input[type="text"] {
