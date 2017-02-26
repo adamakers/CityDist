@@ -1,5 +1,6 @@
 (function(){
-
+  let cityOne;
+  let cityTwo;
   const citiesURL = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
   const formInpOne = document.querySelector('.input-one');
   const resultsList = document.querySelector('.results-list');
@@ -49,22 +50,40 @@
   function clickListItem(e) {
     const target = e.target;
     let chosenCity;
+    //if element clicked is a span or list-item grab name of city from textcontent.
+    //ignores event if not span or li
     if (target.tagName === 'SPAN' || target.tagName === 'LI') {
       if (target.tagName === 'SPAN') {
         chosenCity = target.parentNode.textContent.toLowerCase();
       } else if (target.tagName === 'LI') {
         chosenCity = target.textContent.toLowerCase();
       }
+      //splits city into array of name[0] and state[1];
       chosenCity = chosenCity.split(', ');
+      //filter cities array to find match based off of name and state, retrieves object
+      //removes from array with .shift()
       const filteredCity = cities.filter(function(place){
         return place.city.toLowerCase() === chosenCity[0] && place.state.toLowerCase();
       }).shift();
 
-      formInpOne.value = `${filteredCity.city}, ${filteredCity.state}`;
-      //console.log(filteredCity);
-
+      //assigns first variable then second variable
+      if (!cityOne && !cityTwo) {
+        cityOne = filteredCity;
+      } else if(cityOne && !cityTwo) {
+        cityTwo = filteredCity;
+      }
+      formInpOne.value = '';
     }
   }
+
+  //performs lat long distance.
+
+  function calculateDistance(locOne, locTwo) {
+    let radLatOne = Math.PI * locOne.latitude / 180;
+    let radLatTwo = Math.PI * locTwo.latitude / 180;
+  }
+
+
   
 
 
