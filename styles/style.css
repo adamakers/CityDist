@@ -124,9 +124,7 @@ button {
 
 .marker {
   font-size: 6rem;
-  position: relative
-  top: 300px;
-  z-index: 99;
+  color: #EC644B;
 }
 
 .tracks {

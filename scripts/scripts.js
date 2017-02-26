@@ -2,7 +2,6 @@
 
   const citiesURL = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
   const formInpOne = document.querySelector('.input-one');
-  const formInpTwo = document.querySelector('.input-two');
   const resultsList = document.querySelector('.results-list');
 
 
@@ -12,7 +11,6 @@
 
   http.open("GET", citiesURL, true);
   http.send();
-
   http.onreadystatechange = function() {
     if ( http.readyState === 4 &&
         http.status === 200 ) {
@@ -51,27 +49,31 @@
   function clickListItem(e) {
     const target = e.target;
     let chosenCity;
-    
     if (target.tagName === 'SPAN' || target.tagName === 'LI') {
       if (target.tagName === 'SPAN') {
         chosenCity = target.parentNode.textContent.toLowerCase();
       } else if (target.tagName === 'LI') {
         chosenCity = target.textContent.toLowerCase();
       }
-
       chosenCity = chosenCity.split(', ');
       const filteredCity = cities.filter(function(place){
         return place.city.toLowerCase() === chosenCity[0] && place.state.toLowerCase();
-      });
+      }).shift();
 
-      console.log(filteredCity); 
+      formInpOne.value = `${filteredCity.city}, ${filteredCity.state}`;
+      //console.log(filteredCity);
+
     }
   }
+  
 
 
   // EVENT LISTENERS
   formInpOne.addEventListener("input", displayCities);
   resultsList.addEventListener("click", clickListItem);
+  formInpOne.addEventListener("focus", function(){
+    console.log('asdf');
+  });
 
 })();
 
